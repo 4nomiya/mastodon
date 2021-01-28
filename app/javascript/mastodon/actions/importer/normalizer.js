@@ -10,6 +10,24 @@ const makeEmojiMap = record => record.emojis.reduce((obj, emoji) => {
   return obj;
 }, {});
 
+const profileEmojify = (text, profile_emojis) => {
+  var tmp_content = text;
+  var match_result = tmp_content.match(/:@(([a-z0-9A-Z_]+([a-z0-9A-Z_\.-]+[a-z0-9A-Z_]+)?)(?:@[a-z0-9\.\-]+[a-z0-9]+)?):/g);
+  if (match_result && match_result.length > 0){
+    match_result = Array.from(new Set(match_result));
+    for (let p of match_result) {
+      var regExp = new RegExp(p, "g");
+      var shortname = p.slice(1,-1);
+      var img_url = profile_emojis[shortname]['url'];
+      if (img_url){
+        var replacement = `<img draggable="false" class="emojione" alt="${p}" title="${p}" src="${img_url}" />`;
+        tmp_content = tmp_content.replace(regExp, replacement);
+      }
+    }
+  }
+  return tmp_content;
+}
+
 export function searchTextFromRawStatus (status) {
   const spoilerText   = status.spoiler_text || '';
   const searchContent = ([spoilerText, status.content].concat((status.poll && status.poll.options) ? status.poll.options.map(option => option.title) : [])).concat(status.media_attachments.map(att => att.description)).join('\n\n').replace(/<br\s*\/?>/g, '\n').replace(/<\/p><p>/g, '\n\n');
@@ -22,8 +40,8 @@ export function normalizeAccount(account) {
   const emojiMap = makeEmojiMap(account);
   const displayName = account.display_name.trim().length === 0 ? account.username : account.display_name;
 
-  account.display_name_html = emojify(escapeTextContentForBrowser(displayName), emojiMap);
-  account.note_emojified = emojify(account.note, emojiMap);
+  account.display_name_html = profileEmojify(emojify(escapeTextContentForBrowser(displayName), emojiMap), account.profile_emojis);
+  account.note_emojified = profileEmojify(emojify(account.note, emojiMap), account.profile_emojis);
 
   if (account.fields) {
     account.fields = account.fields.map(pair => ({
@@ -57,8 +75,8 @@ export function normalizeStatus(status, normalOldStatus) {
   // Otherwise keep the ones already in the reducer
   if (normalOldStatus) {
     normalStatus.search_index = normalOldStatus.get('search_index');
-    normalStatus.contentHtml = normalOldStatus.get('contentHtml');
-    normalStatus.spoilerHtml = normalOldStatus.get('spoilerHtml');
+    normalStatus.contentHtml  = profileEmojify(emojify(normalStatus.content, emojiMap), normalStatus.profile_emojis);
+    normalStatus.spoilerHtml  = profileEmojify(emojify(escapeTextContentForBrowser(spoilerText), emojiMap), normalStatus.profile_emojis);
     normalStatus.hidden = normalOldStatus.get('hidden');
   } else {
     const spoilerText   = normalStatus.spoiler_text || '';
