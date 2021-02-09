@@ -1,0 +1,335 @@
+/* Tropical Theme by @Minemu483K@machikadon.online */
+
+/* IDを右下に */
+.status {
+    padding: 8px 10px 14px 68px;
+}
+
+.status .display-name__account {
+position: absolute;
+    bottom: 0;
+    right: 10px;
+    font-size: 0.75em;
+}
+
+/* 全体（一番下）とカラム設定の背景色を変えるやつ */
+body,
+.column-header__collapsible-inner,
+.column-header__button.active,
+.ui {
+   background-color: #2f3136;
+}
+
+/* カラムヘッダーの背景色を変えるやつ */
+.column-header,
+.drawer__header,
+.list-editor h4,
+.public-layout .header,
+.search-results__header,
+.search-results__section h5,
+.tabs-bar {
+   background: linear-gradient(to right, #0bd, orange);
+}
+
+a.column-link {
+   background-color: #36393f;
+}
+
+/* カラムヘッダーもろもろのカドを丸くするやつ */
+.column-back-button,
+.column-header,
+.column-header__button,
+.column-header__back-button,
+.drawer__header,
+.list-editor h4,
+.public-layout .header,
+.search-results__header,
+.search-results__section h5,
+.tabs-bar {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+/* カラムの背景色を変えるやつ */
+.activity-stream .entry,
+.account__header__fields dt,
+.box-widget,
+.card__bar,
+.card__img,
+.column-link__badge,
+.column-subheading,
+.column-inline-form,
+.column>.scrollable,
+.contact-widget,
+.detailed-status,
+.detailed-status__action-bar,
+.drawer__inner,
+.drawer__inner__mastodon,
+.empty-column-indicator,
+.error-column,
+.flex-spacer,
+.getting-started,
+.getting-started__wrapper,
+.hero-widget__text,
+.landing-page__information.contact-widget,
+.landing-page #mastodon-timeline,
+.landing-page__forms,
+.landing-page__information,
+.landing-page__call-to-action,
+.landing-page__information:last-child,
+.landing-page .separator-or span,
+body.theme-default.list-editor,
+.public-layout .public-account-header__bar:before,
+.public-layout .public-account-bio,
+.search__input,
+.status.status-direct,
+.status-card .status-card__content {
+   background-color: #36393f;
+}
+
+/* アカウントプロフィールのヘッダーの背景色 */
+.account__section-headline,
+.account__header .account__header__fields dt,
+.account__header .account__header__fields dd,
+.media-spoiler {
+   background-color: #23272A;
+}
+
+/* アカウントプロフィールのヘッダー画像に被せる色 */
+.account__header>div {
+   background-color: #36393f;
+}
+
+/* リプライ時の返信先トゥートの背景色 */
+.reply-indicator {
+   background-color: #99AAB5;
+}
+
+/* ドロップダウンメニューの背景色 */
+.dropdown-menu,
+.dropdown-menu__item a {
+   background-color: #fff;
+}
+.dropdown-menu__arrow.bottom {
+   border-bottom-color: #fff;
+}
+
+/* メインの文字色 */
+body.theme-default,
+a.drawer__tab,
+.account__header .account__header__fields dt,
+.account__section-headline a.active,
+.account__header__fields dt,
+.column-header>.column-header__back-button,
+.column-header__back-button,
+.column-back-button,
+.column-header__button,
+.column-header__button.active,
+.column-settings__section,
+.column-header__collapsible,
+.dropdown-menu__item a:active,
+.dropdown-menu__item a:focus,
+.dropdown-menu__item a:hover,
+.hero-widget__text,
+.landing-page li,
+.landing-page p,
+.notification__message,
+.public-layout .header .nav-link,
+.rich-formatting h3,
+.rich-formatting h4,
+.rich-formatting li,
+.rich-formatting p,
+.setting-meta__label,
+.setting-toggle__label,
+.status-card:hover .status-card__content,
+.status-card:hover .status-card__title,
+.status-card:hover .status-card__description {
+    color: #fff;
+}
+
+/* 通知、その他の文字色 */
+.account__relationship .icon-button,
+.account__section-headline a,
+.account__action-bar__tab>span,
+.detailed-status__meta,
+.getting-started__footer p,
+.muted .attachment-list__list a,
+.muted .status__content a,
+.muted .status__content p,
+.muted .status__display-name strong,
+.public-layout .public-account-bio .roles,
+.public-layout .public-account-bio__extra,
+.status__relative-time,
+.status__display-name,
+.status-card,
+.status-card__title,
+.status-card__description,
+.status__prepend,
+.status__prepend .status__display-name strong {
+   color: #99AAB5;
+}
+
+/* リンクの文字色 */
+.account__relationship .icon-button.active,
+.account__header .account__header__username,
+.account__header__fields a,
+.attachment-list__list a,
+.status__content a,
+.column-header.active .column-header__icon,
+.compose__action-bar-dropdown .icon-button.active,
+.getting-started__footer a,
+.notification__message .fa,
+.public-layout .public-account-bio .account__header__fields a,
+.reply-indicator__content a,
+.rich-formatting li a,
+.rich-formatting p a,
+.simple_form p.hint.subtle-hint a,
+.tabs-bar__link.active,
+.text-icon-button.active {
+   color: #ff4422;
+}
+
+/* 「もっと見る」の文字色 */
+.reply-indicator__content .status__content__spoiler-link,
+.status__content .status__content__spoiler-link {
+   color: #5f4b8b;
+}
+
+/* トゥート下とかアクションバーの文字色 */
+.account__action-bar-dropdown .icon-button,
+.detailed-status__button .icon-button,
+.detailed-status__action-bar-dropdown .icon-button,
+.icon-button.disabled,
+.notification-favourite .status.status-direct .icon-button.disabled,
+.status__action-bar__counter .icon-button,
+.status__action-bar__counter__label,
+.status__action-bar .icon-button {
+   color: #99AAB5;
+}
+
+/* 入力欄のプレースホルダーの文字色 */
+.search__input:placeholder-shown,
+.setting-text:placeholder-shown,
+.required:placeholder-shown {
+   color: #0bd;
+}
+.search__input::-webkit-input-placeholder,
+.setting-text::-webkit-input-placeholder,
+.required::-webkit-input-placeholder {
+   color: #0bd
+}
+.search__input:-ms-input-placeholder,
+.setting-text:-ms-input-placeholder,
+.required:-ms-input-placeholder {
+   color: #0bd;
+}
+
+/* ボタンの背景色 */
+a.column-link:hover,
+.button,
+.dropdown-menu__item a:active,
+.dropdown-menu__item a:focus,
+.dropdown-menu__item a:hover,
+.floating-action-button,
+.public-layout .header .nav-button,
+.react-toggle--checked .react-toggle-track,
+.reply-indicator__content .status__content__spoiler-link,
+.status__content .status__content__spoiler-link,
+.status-card:hover .status-card__content,
+.simple_form .block-button,
+.simple_form .button,
+.simple_form button {
+   background-color: #ff4422;
+}
+.react-toggle--checked .react-toggle-thumb {
+   border-color: #ff4422;
+}
+.public-layout .public-account-header__tabs__tabs .counter.active:after {
+   border-bottom: 4px solid #ff4422;
+}
+
+/* ボタンのホバー・フォーカス時の背景色 */
+a.drawer__tab:hover,
+.card>a:hover .card__bar,
+.column-header__button:hover,
+.dropdown-menu__item a:hover,
+.public-layout .header .brand:hover,
+.privacy-dropdown.active .privacy-dropdown__value.active,
+.privacy-dropdown__option.active,
+.privacy-dropdown__option:hover,
+.simple_form .block-button:hover,
+.simple_form .button:hover,
+.simple_form button:hover {
+   background-color: #ff4422;
+}
+
+/* トグルスイッチのオフ時の色 */
+.react-toggle-track {
+   background-color: #999;
+}
+.react-toggle-thumb {
+   border: 1px solid #999;
+}
+
+/* リスト名入力欄の下線の色 */
+.column-inline-form label input:focus {
+   border-bottom: 2px solid #ff4422;
+}
+
+/* スマホ版タブバーのアクティブ時のボーダーの色 */
+.tabs-bar__link.active {
+    border-bottom: 2px solid #ff4422;
+}
+
+/* プロフィールページのアバター画像のボーダーと背景色 */
+.public-layout .public-account-header__bar .avatar img {
+    border: none;
+    background: transparent;
+}
+
+/* 各種ボーダーの微調整 */
+.account__header__fields,
+.account__header .account__header__fields dl,
+.detailed-status__action-bar {
+   border-top: 1px solid #606984;
+}
+.public-layout .public-account-header__tabs__tabs .counter:last-child {
+   border-right: none;
+}
+.account__action-bar__tab,
+.public-layout .public-account-header__tabs__tabs .counter {
+   border-right: 1px solid #606984;
+}
+.account__section-headline,
+.detailed-status__action-bar,
+.status {
+   border-bottom: 1px solid #606984;
+}
+.status-card {
+   border: 1px solid #606984;
+}
+.account__section-headline a.active:after {
+   border-color: transparent transparent #606984;
+}
+
+/* 各種ボタンと検索窓の角を丸くする */
+.button,
+.landing-page__forms .button,
+.public-layout .header .nav-button,
+.reply-indicator__content .status__content__spoiler-link,
+.search__input,
+.status__content .status__content__spoiler-link,
+.simple_form button,
+.simple_form .button.negative {
+   border-radius:25px;
+}
+
+.column-header__button {
+   background: rgba(255, 255, 255, 0.0) !important;
+}
+
+/* 「お気に入り」したあとのアイコンの色を変える */
+.notification__favourite-icon-wrapper .star-icon,
+.star-icon.active {
+    color: #e7e401;
+}
