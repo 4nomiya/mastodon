@@ -207,6 +207,13 @@ a.drawer__tab,
    color: #99AAB5;
 }
 
+.status__action-bar .icon-button:hover {
+  color: #AEBBC4;
+  background-color: rgba(96, 105, 132, 0.15);
+  transition: all 200ms ease-out;
+  transition-property: background-color, color;
+}
+
 /* 入力欄のプレースホルダーの文字色 */
 .search__input:placeholder-shown,
 .setting-text:placeholder-shown,
@@ -331,5 +338,5 @@ a.drawer__tab:hover,
 /* 「お気に入り」したあとのアイコンの色を変える */
 .notification__favourite-icon-wrapper .star-icon,
 .star-icon.active {
-    color: #e7e401;
+    color: #e7e401 !important;
 }
